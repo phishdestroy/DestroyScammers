@@ -1,0 +1,51 @@
+# Environment files with API keys
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data backups and temp files
+data/data_backup.json
+data/actors/
+data/connections.json
+data/index.json
+*.bak
+*.tmp
+*.log
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Session files
+SESSION_SUMMARY.md
+nul
+
+# Keep these (but they're listed for reference)
+# data/data.json - main data file
+# data/registrants.json - optional
+# scripts/.env.example - template for API keys

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DestroyScammers - Threat Intelligence Platform</title>
+<meta name="description" content="DestroyScammers - Advanced OSINT Threat Intelligence Platform for identifying and tracking phishing domains, malware infrastructure, and threat actors.">
+<meta name="keywords" content="phishing, threat intelligence, OSINT, malware, cybersecurity, domain analysis, brand protection, scammers">
+<meta name="author" content="PhishDestroy">
+<meta property="og:title" content="DestroyScammers - Threat Intelligence Platform">
+<meta property="og:description" content="Advanced OSINT platform for tracking phishing, malware, and threat actors">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#00d4ff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<!-- Animated Background -->
+<div class="bg-grid"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+<div class="scanline"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v4M12 16h.01"/>
+            </svg>
+        </div>
+        <div class="logo-text">
+            <a href="https://github.com/phishdestroy/DestroyScammers" target="_blank" class="logo-link" title="View on GitHub">
+                <span class="logo-title">Destroy<span class="accent">Scammers</span></span>
+                <span class="logo-sub">Threat Intelligence</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <span class="nav-text">Dashboard</span>
+            <span class="nav-indicator"></span>
+        </button>
+        <button class="nav-item" data-view="actors">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span class="nav-text">Threat Actors</span>
+            <span class="nav-indicator"></span>
+        </button>
+        <button class="nav-item" data-view="threats">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span class="nav-text">Threats</span>
+            <span class="nav-indicator"></span>
+        </button>
+        <button class="nav-item" data-view="graph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            <span class="nav-text">Relationship Graph</span>
+            <span class="nav-indicator"></span>
+        </button>
+    </nav>
+
+    <div class="sidebar-stats">
+        <div class="mini-stat">
+            <div class="mini-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+            <span class="mini-stat-value" id="stat-actors">-</span>
+            <span class="mini-stat-label">Actors</span>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+            </div>
+            <span class="mini-stat-value" id="stat-domains">-</span>
+            <span class="mini-stat-label">Domains</span>
+        </div>
+        <div class="mini-stat critical">
+            <div class="mini-stat-icon pulse">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <span class="mini-stat-value" id="stat-threats">-</span>
+            <span class="mini-stat-label">Active Threats</span>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M9 21V9"/>
+                </svg>
+            </div>
+            <span class="mini-stat-value" id="stat-registrars">-</span>
+            <span class="mini-stat-label">Registrars</span>
+        </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>System Online</span>
+        </div>
+    </div>
+</aside>
+
+<!-- Main -->
+<main class="main-content">
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search actors, domains, emails, phones...">
+            <kbd class="search-kbd">/</kbd>
+        </div>
+        <div class="topbar-right">
+            <div class="stat-pills">
+                <div class="stat-pill danger">
+                    <span class="pill-icon">☠️</span>
+                    <span class="pill-value" id="pill-malware">0</span>
+                    <span class="pill-label">Malware</span>
+                </div>
+                <div class="stat-pill warning">
+                    <span class="pill-icon">🎣</span>
+                    <span class="pill-value" id="pill-phishing">0</span>
+                    <span class="pill-label">Phishing</span>
+                </div>
+                <div class="stat-pill brand">
+                    <span class="pill-icon">🏷️</span>
+                    <span class="pill-value" id="pill-brand">0</span>
+                    <span class="pill-label">Brand</span>
+                </div>
+                <div class="stat-pill info">
+                    <span class="pill-icon">🔓</span>
+                    <span class="pill-value" id="pill-leaks">0</span>
+                    <span class="pill-label">Leaks</span>
+                </div>
+            </div>
+            <div class="topbar-time">
+                <span id="current-time"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <div id="dashboard-view" class="view active">
+        <div class="view-title">
+            <h1>Threat Intelligence Overview</h1>
+            <p class="view-subtitle">Real-time monitoring and analysis of malicious actors</p>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="stats-row">
+                <div class="stat-card glass">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-actors">-</div>
+                        <div class="stat-card-label">Threat Actors</div>
+                        <div class="stat-card-trend up">+12% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-domains">-</div>
+                        <div class="stat-card-label">Malicious Domains</div>
+                        <div class="stat-card-trend up">+8% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card glass danger">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-phishing">-</div>
+                        <div class="stat-card-label">Phishing Sites</div>
+                        <div class="stat-card-trend down">-3% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card glass danger">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M12 8v4M12 16h.01"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-malware">-</div>
+                        <div class="stat-card-label">Malware Detected</div>
+                        <div class="stat-card-trend up">+15% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card glass warning">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                            <line x1="7" y1="7" x2="7.01" y2="7"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-brand">-</div>
+                        <div class="stat-card-label">Brand Impersonation</div>
+                        <div class="stat-card-trend neutral">No change</div>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-registrars">-</div>
+                        <div class="stat-card-label">Registrars</div>
+                        <div class="stat-card-trend neutral">Domain providers</div>
+                    </div>
+                </div>
+                <div class="stat-card glass info">
+                    <div class="stat-card-bg"></div>
+                    <div class="stat-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card-data">
+                        <div class="stat-card-value" id="dash-passwords">-</div>
+                        <div class="stat-card-label">Leaked Credentials</div>
+                        <div class="stat-card-trend up">+24% from last month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="dashboard-section glass">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <span class="section-icon">🎯</span>
+                            <h2>Critical Threats</h2>
+                        </div>
+                        <button class="btn-link" onclick="switchView('threats')">
+                            View All
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="threats-preview" id="critical-threats"></div>
+                </div>
+
+                <div class="dashboard-section glass">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <span class="section-icon">👤</span>
+                            <h2>Identified Actors</h2>
+                        </div>
+                        <button class="btn-link" onclick="switchView('actors')">
+                            View All
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="actors-preview" id="top-actors"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actors -->
+    <div id="actors-view" class="view">
+        <div class="view-header">
+            <div class="view-title">
+                <h1>Threat Actors Database</h1>
+                <p class="view-subtitle">Comprehensive profiles of identified threat actors</p>
+            </div>
+            <div class="filter-chips">
+                <button class="chip active" data-filter="all">
+                    <span class="chip-dot"></span>All Actors
+                </button>
+                <button class="chip" data-filter="malware">
+                    <span class="chip-dot danger"></span>Malware
+                </button>
+                <button class="chip" data-filter="phishing">
+                    <span class="chip-dot warning"></span>Phishing
+                </button>
+                <button class="chip" data-filter="brand">
+                    <span class="chip-dot brand"></span>Brand
+                </button>
+                <button class="chip" data-filter="leaks">
+                    <span class="chip-dot info"></span>With Leaks
+                </button>
+            </div>
+        </div>
+        <div class="actors-grid" id="actors-container"></div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Threats -->
+    <div id="threats-view" class="view">
+        <div class="view-header">
+            <div class="view-title">
+                <h1>Threat Intelligence Feed</h1>
+                <p class="view-subtitle">Live monitoring of malicious infrastructure</p>
+            </div>
+            <div class="threats-filters">
+                <select id="threat-type-filter" onchange="filterThreats()">
+                    <option value="all">All Types</option>
+                    <option value="malware">Malware</option>
+                    <option value="phishing">Phishing</option>
+                </select>
+                <select id="threat-registrar-filter" onchange="filterThreats()">
+                    <option value="all">All Registrars</option>
+                </select>
+                <select id="threat-sort" onchange="filterThreats()">
+                    <option value="severity">Sort: Severity</option>
+                    <option value="date">Sort: Date</option>
+                    <option value="registrar">Sort: Registrar</option>
+                </select>
+            </div>
+        </div>
+        <div class="threats-stats" id="threats-stats"></div>
+        <div class="threats-grid" id="threats-container"></div>
+    </div>
+
+    <!-- Graph -->
+    <div id="graph-view" class="view">
+        <div class="graph-full" id="graph-container"></div>
+    </div>
+</main>
+
+<!-- Actor Modal -->
+<div class="actor-modal" id="actor-modal">
+    <div class="actor-modal-backdrop" onclick="closeActorModal()"></div>
+    <div class="actor-modal-content">
+        <button class="actor-modal-close" onclick="closeActorModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div id="actor-profile"></div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal" id="modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <img id="modal-image" src="" alt="">
+        <div class="modal-info" id="modal-info"></div>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+// Update time
+function updateTime() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+    const dateStr = now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    document.getElementById('current-time').innerHTML = `<span class="time">${timeStr}</span><span class="date">${dateStr}</span>`;
+}
+setInterval(updateTime, 1000);
+updateTime();
+
+// Search keyboard shortcut
+document.addEventListener('keydown', e => {
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        document.getElementById('search-input').focus();
+    }
+});
+</script>
+
+</body>
+</html>
