@@ -39,6 +39,8 @@ My relationship with these users is at the level where I warned them about the p
 
 ## 🎯 The Reality About Scammers
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70003&width=435&lines=Crime+Grows+in+Silence.)](https://git.io/typing-svg)
+
 Well, let's talk about scammers and phishers. Sounds unpleasant, right?
 
 If a victim hears that the scammer is from <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Nigeria.webp" alt="Flag Nigeria" width="25" height="25" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Russia.webp" alt="Flag Russia" width="25" height="25" /> , Belarus, or <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Ukraine.webp" alt="Flag Ukraine" width="25" height="25" />  — many hesitate to continue the investigation. But why?
@@ -68,13 +70,14 @@ Yes, relations between countries may be tense, but it's important to understand 
 
 They are **frightened mice** — not real people — they are scared of their own shadow, scared of their own actions.
 
-> **One of them even cried.**
+> **One of them even begged.**
 
 It's important to gather evidence and identify your scammer. Once you have that, you can plan a solution.
 
 ---
 
 ## 📋 Real Cases I Witnessed
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70003&width=435&lines=Don%E2%80%99t+play+hero+%E2%80%94+report+it+properly.)](https://git.io/typing-svg)
 
 | 🌍 Case | 📝 What Happened | ✅ Result |
 |---------|------------------|-----------|
@@ -95,6 +98,64 @@ We won't go into details — what matters is the essence:
 - ❌ **The scammer received no protection from his country — quite the opposite**
 
 </details>
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20United%20Arab%20Emirates.webp" alt="Flag United Arab Emirates" width="25" height="25" />  More details about the Dubai case</b></summary>
+Another case was resolved through Dubai — not because the scam happened there, but because the scammer eventually flew into the UAE, where the complaint had already been filed.
+
+The victim was an older man who lost his entire savings after believing a “x2 airdrop” promoted under the name of a well-known media personality. The scammers walked him through every step in support chats, convincing him to send his full Coinbase balance and then the rest of his money from his bank account. For him, this was devastating — he genuinely believed in the promise, especially during a difficult period of his life.
+
+He spent his final days worried that he would leave nothing to his grandchildren. He repeatedly visited his local police, talked about the mistake, and blamed himself for being “too naive”. For his son, the case became a matter of principle: the scammer had exploited a vulnerable person with precision and patience, and the loss was not only six-figures in crypto but also included funds tied to their home.
+
+The digital trail pointed directly to Russia. The scammer slipped several times — including typing in the wrong keyboard layout — which helped confirm the identity.
+
+At one point, the son even considered flying to Russia to file a report in person. But things changed when relatives monitoring the scammer’s social media noticed that he was traveling to Dubai.  
+The son had a legal and stable residency-linked status in the UAE due to business connections, which allowed him to file a complaint directly through the UAE system.
+
+He submitted the case, travelled to Dubai, and contacted local lawyers willing to handle a case involving a foreign national.
+
+When the scammer landed in the UAE, the complaint was already active.  
+That was enough:
+
+- **The complaint was formally accepted in the UAE**
+- **The scammer was detained upon arrival**
+- **The case was processed under UAE jurisdiction**
+- **His nationality and distance did not protect him**
+</details>
+
+
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Russia.webp" alt="Flag Russia" width="25" height="25" />  Russia Is Not Isolated — How Requests Really Get Processed/b></summary>
+
+People often think that scamming victims from “unfriendly” countries is somehow safe. It isn’t.  
+Crypto has no borders, and victims are not stupid — they can transfer their case to people in countries that actively cooperate with Russia. And there are many of these countries.
+
+Russia is not North Korea, and even North Korea isn’t truly isolated. Russia has active legal cooperation with a long list of states, especially under the Minsk Convention and bilateral treaties.  
+When a request comes from these countries, Russia processes it — searches, interrogations, asset freezes, and cross-border investigations happen regularly.
+
+This includes:
+Azerbaijan, Armenia, Belarus, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan — plus China, India, Türkiye, UAE, Iran, Vietnam, Mongolia, Argentina, Brazil, Cuba, Algeria, Egypt
+
+Your passport doesn’t matter.  
+A Russian tourist abroad can become a victim. A foreign victim can transfer their case to a country friendly to them. The stolen crypto can be tracked from anywhere.  
+Jurisdiction follows the evidence — not your illusions.
+
+Some scammers believe they live in an isolated bubble or that "local loyalty" protects them. That is a fantasy.  
+International cooperation exists everywhere, and it hits harder than any local case.
+
+But the most important part is this:
+
+To trigger any international request, you must have an open case in your country.  
+Without that, no cross-border action will ever start.
+
+Do not pay “recovery scammers”. Do not rely on promises.  
+Understand your case, collect evidence, and act quickly — time matters.  
+A scammer can disappear, spend the funds, end up arrested for another crime, or simply vanish.
+
+Most victims want their money back, not revenge.  
+And the only real path to that is proper reporting, real evidence, and refusing to waste time on fake “helpers”.
+
+</details>
 
 ---
 
@@ -106,7 +167,12 @@ We won't go into details — what matters is the essence:
 
 </div>
 
-For scammers — yes, your friend from the Moscow arbitration "scene" became the reason, and he told a lot about all of you, maybe even about the leadership of some illegal teams.
+Do not stay silent — speak up and report it.  
+Scammers rely on victims being quiet, not on any real protection.
+
+And for scammers: if you think your circles, chats, or “arbitration scenes” keep secrets — they don’t.  
+People talk. Mistakes slip. Information leaks.  
+Your own environment is often the first place where your identity surfaces.
 
 ---
 
@@ -159,7 +225,9 @@ What tools did I use for the dashboard? Only **legal tools** paid for with my ow
 | 📡 **AbuseIPDB** | https://www.abuseipdb.com/ | IP reputation scoring |
 | 📑 **Wayback Machine API** | https://archive.org/help/wayback_api.php | Automated archival lookups |
 
-## 🏢 Registrar Reality
+<details>
+<summary><b>🏢 Registrar Reality</b></summary>
+
 
 Some registrars occasionally reply to us on Twitter — for example, NameSilo, WebNIC, NiceNic and others — trying to imply that reports are “handled” and that they actively work with abuse teams.
 
@@ -180,6 +248,7 @@ They simply process one report, remove one domain, and allow the scammer to cont
 In other words:
 
 **They are not “fighting fraud”. They are part of the fraudster’s infrastructure.**
+</details>
 
 ---
 
@@ -269,7 +338,9 @@ I have never seen or heard of scammers being defended like Locker-level cases.
 | Easy to identify and prosecute                  | Subject to entirely different legal and political rules  |
 | Just opportunistic thieves                      | Not about petty theft — strategic, high-impact missions  |
 
-## 🗂️ Why We Publicly Archive Scam Infrastructure
+
+<details>
+<summary><b>🗂️ Why We Publicly Archive Scam Infrastructure</b></summary>
 
 For years scammers never understood why their phishing domains, drainers,
 panels and payloads were constantly:
@@ -304,7 +375,7 @@ matters — because the evidence alone is enough.
 We collected it so scammers could understand their position —  
 your infrastructure has been documented for years,  
 and nothing you do now can change that.**
-
+</details>
 
 <div align="center">
 
@@ -322,7 +393,10 @@ So gather evidence. Save everything.
 And hopefully the scammer won't have time to waste the stolen money or lose it in a casino.
 
 ---
-## 🔥 Personal Motivation & Interest
+<details>
+<summary><b>🔥 Personal Motivation & Interest</b></summary>
+
+<br>
 
 People often try to question my personal interest in this project, as if
 proving I have motivation somehow changes their responsibility for the
@@ -341,13 +415,14 @@ that position.
 
 At that point, all I can say is this: whatever you believe in may help you,
 because your actions certainly will not.
+</details>
 
 ---
 
-## 🧨 A Note for Scammers Who Think They Outsmarted the System
-
+<details>
+<summary><b>🧨 A Note for Scammers Who Think They Outsmarted the System</b></summary>
 Many Russian scammers invented a comforting myth: “if you don’t touch the stolen money for five years, you can legalize it later and walk away clean.” Reality is different. If an investigation is active or you appear in an open case, the clock does not run for you. And your crimes are never “just money theft” — they involve unauthorized access, personal data breaches, fraud, crypto laundering, cross-border transfers, and conspiracy. Each of these separately resets or extends statute limits. The “five-year legend” is nothing more than self-soothing fiction. If you’re already in the pipeline, waiting won’t save you.
-
+</details>
 
 <div align="center">
 
