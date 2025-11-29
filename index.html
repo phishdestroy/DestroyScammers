@@ -21,13 +21,11 @@
 <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-<!-- Animated Background -->
 <div class="bg-grid"></div>
 <div class="bg-glow glow-1"></div>
 <div class="bg-glow glow-2"></div>
 <div class="scanline"></div>
-
-<!-- Sidebar -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-icon">
@@ -139,11 +137,13 @@
         </div>
     </div>
 </aside>
-
-<!-- Main -->
 <main class="main-content">
-    <!-- Top Bar -->
     <header class="topbar">
+        <button class="mobile-menu-btn mobile-only" id="mobileMenuBtn" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </button>
         <div class="search-container">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"/>
@@ -180,8 +180,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Dashboard -->
     <div id="dashboard-view" class="view active">
         <div class="view-title">
             <h1>Threat Intelligence Overview</h1>
@@ -326,8 +324,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Actors -->
     <div id="actors-view" class="view">
         <div class="view-header">
             <div class="view-title">
@@ -382,14 +378,10 @@
         <div class="threats-stats" id="threats-stats"></div>
         <div class="threats-grid" id="threats-container"></div>
     </div>
-
-    <!-- Graph -->
     <div id="graph-view" class="view">
         <div class="graph-full" id="graph-container"></div>
     </div>
 </main>
-
-<!-- Actor Modal -->
 <div class="actor-modal" id="actor-modal">
     <div class="actor-modal-backdrop" onclick="closeActorModal()"></div>
     <div class="actor-modal-content">
@@ -418,9 +410,141 @@
     </div>
 </div>
 
+<!-- Disclaimer Modal -->
+<div class="disclaimer-modal" id="disclaimer-modal">
+    <div class="disclaimer-backdrop"></div>
+    <div class="disclaimer-content">
+        <div class="disclaimer-header">
+            <div class="disclaimer-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M12 8v4M12 16h.01"/>
+                </svg>
+            </div>
+            <h2>Important Notice</h2>
+            <p class="disclaimer-subtitle">Please read carefully before proceeding</p>
+        </div>
+        <div class="disclaimer-body">
+            <ul class="disclaimer-list">
+                <li>
+                    <span class="disclaimer-bullet">1</span>
+                    <span>This database contains <strong>publicly available information</strong> obtained through legal means from open sources.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">2</span>
+                    <span>We do not store or host the original databases - only search results related to known scammer email addresses.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">3</span>
+                    <span>We are <strong>not the authors</strong> of this information and do not claim any ownership or authorship.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">4</span>
+                    <span>All data is provided <strong>"as is"</strong> without any warranties regarding accuracy, completeness, or reliability.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">5</span>
+                    <span>We assume <strong>no responsibility</strong> for the accuracy of the data or any consequences of its use.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">6</span>
+                    <span>This tool is intended <strong>solely for research purposes</strong> to help identify and investigate potential scammers.</span>
+                </li>
+                <li>
+                    <span class="disclaimer-bullet">7</span>
+                    <span>By accessing this database, you agree to use the information <strong>responsibly and lawfully</strong>.</span>
+                </li>
+            </ul>
+            <div class="disclaimer-project">
+                <span class="project-badge">DestroyScammers</span>
+                <span>This project is part of the DestroyScammers initiative aimed at protecting people from online fraud.</span>
+            </div>
+        </div>
+        <div class="disclaimer-footer">
+            <button class="disclaimer-btn" onclick="acceptDisclaimer()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                I Understand & Accept
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="leak-info-modal" id="leak-info-modal">
+    <div class="leak-info-backdrop" onclick="closeLeakInfoModal()"></div>
+    <div class="leak-info-content">
+        <button class="leak-info-close" onclick="closeLeakInfoModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="leak-info-header">
+            <div class="leak-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+            </div>
+            <h2>Full Leak Data Access</h2>
+        </div>
+        <div class="leak-info-body">
+            <div class="leak-info-notice">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <span>Why is this data protected?</span>
+            </div>
+            <p class="leak-info-text">
+                Under the laws of certain countries, personal data - even belonging to confirmed scammers - cannot be freely distributed if it originates from databases that haven't been officially verified or confirmed by authorities.
+            </p>
+            <p class="leak-info-text">
+                Distributing such information could potentially violate <strong>GitHub's Terms of Service</strong> and various international privacy regulations.
+            </p>
+            <p class="leak-info-text highlight">
+                Therefore, complete leak data is hosted on our private server with <strong>password protection</strong>, <strong>CAPTCHA verification</strong>, and <strong>encryption</strong> - in compliance with U.S. federal laws regarding data handling.
+            </p>
+            <div class="leak-info-access">
+                <div class="access-item">
+                    <span class="access-label">Access URL:</span>
+                    <code class="access-value">https://phishdestroy.io/DestroyScammers/</code>
+                    <button class="copy-btn" onclick="copyToClipboard('https://phishdestroy.io/DestroyScammers/')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="access-item">
+                    <span class="access-label">Password:</span>
+                    <code class="access-value password">DestroyScammers</code>
+                    <button class="copy-btn" onclick="copyToClipboard('DestroyScammers')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="leak-info-footer">
+            <a href="https://phishdestroy.io/DestroyScammers/" target="_blank" class="leak-info-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                Access Full Database
+            </a>
+        </div>
+    </div>
+</div>
+
 <script src="js/app.js"></script>
 <script>
-// Update time
 function updateTime() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
@@ -429,14 +553,78 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
-
-// Search keyboard shortcut
 document.addEventListener('keydown', e => {
     if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
         e.preventDefault();
         document.getElementById('search-input').focus();
     }
 });
+function showDisclaimer() {
+    if (!localStorage.getItem('disclaimerAccepted')) {
+        document.getElementById('disclaimer-modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function acceptDisclaimer() {
+    localStorage.setItem('disclaimerAccepted', 'true');
+    document.getElementById('disclaimer-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Leak Info Modal
+function showLeakInfoModal() {
+    document.getElementById('leak-info-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLeakInfoModal() {
+    document.getElementById('leak-info-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 1500);
+    });
+}
+document.addEventListener('DOMContentLoaded', showDisclaimer);
+const leakObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) {
+                const leakSections = node.querySelectorAll ?
+                    node.querySelectorAll('.profile-section') : [];
+
+                leakSections.forEach(section => {
+                    const header = section.querySelector('.ps-header h3');
+                    if (header && (
+                        header.textContent.includes('Leak') ||
+                        header.textContent.includes('Password') ||
+                        header.textContent.includes('Credential')
+                    )) {
+                        if (!section.querySelector('.check-full-info-btn')) {
+                            const btn = document.createElement('button');
+                            btn.className = 'check-full-info-btn';
+                            btn.innerHTML = `
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                Check Full Info
+                            `;
+                            btn.onclick = showLeakInfoModal;
+                            section.appendChild(btn);
+                        }
+                    }
+                });
+            }
+        });
+    });
+});
+
+leakObserver.observe(document.body, { childList: true, subtree: true });
 </script>
 
 </body>
