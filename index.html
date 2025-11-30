@@ -21,11 +21,16 @@
 <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
+<!-- Animated Background -->
 <div class="bg-grid"></div>
 <div class="bg-glow glow-1"></div>
 <div class="bg-glow glow-2"></div>
 <div class="scanline"></div>
+
+<!-- Mobile Overlay -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar -->
 <aside class="sidebar">
     <div class="sidebar-logo">
         <div class="logo-icon">
@@ -137,8 +142,12 @@
         </div>
     </div>
 </aside>
+
+<!-- Main -->
 <main class="main-content">
+    <!-- Top Bar -->
     <header class="topbar">
+        <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn mobile-only" id="mobileMenuBtn" aria-label="Open menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 12h18M3 6h18M3 18h18"/>
@@ -180,6 +189,8 @@
             </div>
         </div>
     </header>
+
+    <!-- Dashboard -->
     <div id="dashboard-view" class="view active">
         <div class="view-title">
             <h1>Threat Intelligence Overview</h1>
@@ -324,6 +335,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Actors -->
     <div id="actors-view" class="view">
         <div class="view-header">
             <div class="view-title">
@@ -378,10 +391,14 @@
         <div class="threats-stats" id="threats-stats"></div>
         <div class="threats-grid" id="threats-container"></div>
     </div>
+
+    <!-- Graph -->
     <div id="graph-view" class="view">
         <div class="graph-full" id="graph-container"></div>
     </div>
 </main>
+
+<!-- Actor Modal -->
 <div class="actor-modal" id="actor-modal">
     <div class="actor-modal-backdrop" onclick="closeActorModal()"></div>
     <div class="actor-modal-content">
@@ -471,6 +488,7 @@
     </div>
 </div>
 
+<!-- Leak Info Modal -->
 <div class="leak-info-modal" id="leak-info-modal">
     <div class="leak-info-backdrop" onclick="closeLeakInfoModal()"></div>
     <div class="leak-info-content">
@@ -545,6 +563,7 @@
 
 <script src="js/app.js"></script>
 <script>
+// Update time
 function updateTime() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
@@ -553,12 +572,16 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+// Search keyboard shortcut
 document.addEventListener('keydown', e => {
     if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
         e.preventDefault();
         document.getElementById('search-input').focus();
     }
 });
+
+// Disclaimer Modal
 function showDisclaimer() {
     if (!localStorage.getItem('disclaimerAccepted')) {
         document.getElementById('disclaimer-modal').classList.add('active');
@@ -582,6 +605,8 @@ function closeLeakInfoModal() {
     document.getElementById('leak-info-modal').classList.remove('active');
     document.body.style.overflow = '';
 }
+
+// Copy to clipboard
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         const btn = event.currentTarget;
@@ -589,11 +614,16 @@ function copyToClipboard(text) {
         setTimeout(() => btn.classList.remove('copied'), 1500);
     });
 }
+
+// Show disclaimer on load
 document.addEventListener('DOMContentLoaded', showDisclaimer);
+
+// Observe for leak sections and add "Check Full Info" button
 const leakObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
             if (node.nodeType === 1) {
+                // Find leak sections (Leaked Credentials, Passwords, etc.)
                 const leakSections = node.querySelectorAll ?
                     node.querySelectorAll('.profile-section') : [];
 
@@ -604,6 +634,7 @@ const leakObserver = new MutationObserver((mutations) => {
                         header.textContent.includes('Password') ||
                         header.textContent.includes('Credential')
                     )) {
+                        // Check if button already exists
                         if (!section.querySelector('.check-full-info-btn')) {
                             const btn = document.createElement('button');
                             btn.className = 'check-full-info-btn';
