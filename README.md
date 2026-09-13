@@ -125,7 +125,7 @@ That was enough:
 
 
 <details>
-<summary><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Russia.webp" alt="Flag Russia" width="25" height="25" />  Russia Is Not Isolated — How Requests Really Get Processed/b></summary>
+<summary><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Russia.webp" alt="Flag Russia" width="25" height="25" />  Russia Is Not Isolated — How Requests Really Get Processed</b></summary>
 
 People often think that scamming victims from “unfriendly” countries is somehow safe. It isn’t.  
 Crypto has no borders, and victims are not stupid — they can transfer their case to people in countries that actively cooperate with Russia. And there are many of these countries.
@@ -428,7 +428,7 @@ Many Russian scammers invented a comforting myth: “if you don’t touch the st
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Printer.webp" alt="Printer" width="25" height="25" />  Links
 
-[![GitHub](https://img.shields.io/badge/GitHub-DestroyScammers-181717?style=for-the-badge&logo=github)](https://github.com/DestroyScammers)
+[![GitHub](https://img.shields.io/badge/GitHub-DestroyScammers-181717?style=for-the-badge&logo=github)](https://github.com/phishdestroy/DestroyScammers)
 [![Dataset](https://img.shields.io/badge/Dataset-DestroyList-FF6B6B?style=for-the-badge&logo=databricks)](https://github.com/phishdestroy/destroylist)
 
 ---
