@@ -7,7 +7,7 @@ DestroyScammers is an open-source phishing intelligence dashboard from PhishDest
 [**Open the dashboard →**](https://phishdestroy.github.io/DestroyScammers/) · [OSINT scripts](scripts/README.md) · [Evidence archive](https://github.com/phishdestroy/ScamIntelLogs)
 
 <p align="center">
-  <img src="DestroyScammers.png" alt="DestroyScammers — phishing intelligence and infrastructure research" width="720">
+  <img src="DestroyScammers.webp" alt="DestroyScammers — phishing intelligence and infrastructure research" width="720">
 </p>
 
 ## Find your starting point
