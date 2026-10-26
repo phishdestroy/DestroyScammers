@@ -1,29 +1,60 @@
-<div align="center">
+# DestroyScammers
 
-# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Police%20Officer.webp" alt="Man Police Officer" width="25" height="25" />  DestroyScammers <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Clown%20Face.webp" alt="Clown Face" width="25" height="25" />
+**Follow the domains. Connect the infrastructure. Preserve the evidence.**
 
-### Public Scam Intelligence Dashboard
+DestroyScammers is an open-source phishing intelligence dashboard from PhishDestroy. Explore domain records, threat detections, registrar information and infrastructure relationships to support crypto scam research and fraud investigations.
 
-<p>
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg">
-  <img src="https://img.shields.io/badge/Threat%20Actors-1500%2B-red.svg">
-  <img src="https://img.shields.io/badge/Malicious%20Domains-50000%2B-orange.svg">
-  <img src="https://img.shields.io/badge/License-Research%20Only-blue.svg">
-</p>
+[**Open the dashboard →**](https://phishdestroy.github.io/DestroyScammers/) · [OSINT scripts](scripts/README.md) · [Evidence archive](https://github.com/phishdestroy/ScamIntelLogs)
 
-**Scammers aren’t hackers — and this dashboard proves it.**
-
-</div>
-
----
-
-<!-- BANNER AFTER MAIN TITLE -->
 <p align="center">
-  <img src="DestroyScammers.png" width="600" alt="DestroyScammers Banner">
+  <img src="DestroyScammers.png" alt="DestroyScammers — phishing intelligence and infrastructure research" width="720">
 </p>
 
----
+## Find your starting point
 
+| View | What you can do |
+|---|---|
+| **Dashboard** | Review the loaded dataset, detection totals and highlighted records. |
+| **Threat Actors** | Explore the records and the domain evidence associated with them. |
+| **Threats** | Filter domain detections by type and registrar, then follow source references. |
+| **Relationship Graph** | Explore the connections represented in the dataset. |
+
+Use the dashboard's search field to begin with a domain. The displayed totals reflect the dataset currently loaded in your browser.
+
+## Investigation workflow
+
+1. **Start with an indicator.** Record the reported domain, URL or transaction reference and when it was observed.
+2. **Follow the sources.** Review available scans, historical pages, detection results and registrar records from the dashboard.
+3. **Preserve what you use.** Save source links, timestamps, screenshots and the relevant repository revision with your notes.
+4. **Build the report.** Explain the sequence of events, attach supporting artifacts and retain the report or case reference.
+
+For chat exports, panel artifacts and operation-specific evidence, use [ScamIntelLogs](https://github.com/phishdestroy/ScamIntelLogs). For a domain blocklist, use [destroylist](https://github.com/phishdestroy/destroylist).
+
+<details>
+<summary><strong>Run the dashboard locally</strong></summary>
+
+The dashboard is a static site. A local HTTP server is needed to load its JSON data.
+
+```bash
+git clone https://github.com/phishdestroy/DestroyScammers.git
+cd DestroyScammers
+python -m http.server 8000
+```
+
+Open **http://localhost:8000/** in your browser. Run the server from the repository root so that `css/`, `js/` and `data/` resolve correctly.
+
+For separate collection utilities, see the [OSINT scripts guide](scripts/README.md). Those tools have their own dependencies and API-key requirements.
+
+</details>
+
+## Case studies and research notes
+
+Explore case accounts, investigation tools and guidance on preserving evidence and reporting fraud. Expand a section to read more.
+
+> **Scammers aren’t hackers — and this dashboard proves it.**
+
+<details>
+<summary><strong>Important Notice</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Card%20Index%20Dividers.webp" alt="Card Index Dividers" width="25" height="25" />  Important Notice
 
@@ -36,6 +67,11 @@ These are my correspondents — it is important for you to understand that legal
 My relationship with these users is at the level where I warned them about the public publication of their actions, and no claims will be considered by me.
 
 ---
+
+</details>
+
+<details>
+<summary><strong>The Reality About Scammers</strong></summary>
 
 ## 🎯 The Reality About Scammers
 
@@ -64,6 +100,11 @@ It just so happened that I witnessed several cases — an airdrop drainer operat
 
 ---
 
+</details>
+
+<details>
+<summary><strong>Who Are These Scammers?</strong></summary>
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Mouse%20Face.webp" alt="Mouse Face" width="25" height="25" />  Who Are These Scammers?
 
 Yes, relations between countries may be tense, but it's important to understand that **scammers are not the government**.
@@ -75,6 +116,11 @@ They are **frightened mice** — not real people — they are scared of their ow
 It's important to gather evidence and identify your scammer. Once you have that, you can plan a solution.
 
 ---
+
+</details>
+
+<details>
+<summary><strong>Real Cases I Witnessed</strong></summary>
 
 ## 📋 Real Cases I Witnessed
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70003&width=435&lines=Don%E2%80%99t+play+hero+%E2%80%94+report+it+properly.)](https://git.io/typing-svg)
@@ -159,6 +205,11 @@ And the only real path to that is proper reporting, real evidence, and refusing 
 
 ---
 
+</details>
+
+<details>
+<summary><strong>Message to Everyone</strong></summary>
+
 ## 💬 Message to Everyone
 
 <div align="center">
@@ -175,6 +226,11 @@ People talk. Mistakes slip. Information leaks.
 Your own environment is often the first place where your identity surfaces.
 
 ---
+
+</details>
+
+<details>
+<summary><strong>The Moral of This Story</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Newspaper.webp" alt="Newspaper" width="25" height="25" />  The Moral of This Story
 
@@ -207,6 +263,11 @@ Your own environment is often the first place where your identity surfaces.
 ```
 
 ---
+
+</details>
+
+<details>
+<summary><strong>Tools Used</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Microscope.webp" alt="Microscope" width="25" height="25" />  Tools Used
 
@@ -252,6 +313,11 @@ In other words:
 
 ---
 
+</details>
+
+<details>
+<summary><strong>Roadmap</strong></summary>
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/New%20Button.webp" alt="New Button" width="25" height="25" />  Roadmap
 
 I may add more scammers, more information, more functions — but it turned out to be harder than I expected and took a lot of time.
@@ -267,6 +333,11 @@ I also want to make a tool (it already exists privately) for collecting evidence
 | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Keycap%20Digit%20Three.png" alt="Keycap Digit Three" width="25" height="25" />  | **Financial Tracing** | How bridges, exchanges, and mixers can be identified and funds traced |
 
 ---
+
+</details>
+
+<details>
+<summary><strong>Message for Victims</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/SOS%20Button.png" alt="SOS Button" width="25" height="25" />  Message for Victims
 
@@ -298,6 +369,11 @@ I also want to make a tool (it already exists privately) for collecting evidence
 
 ---
 
+</details>
+
+<details>
+<summary><strong>Choosing Legal Representation</strong></summary>
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Balance%20Scale.png" alt="Balance Scale" width="25" height="25" />  Choosing Legal Representation
 
 The Kazakhstan case was chosen not randomly — you should remember:
@@ -309,6 +385,11 @@ The Kazakhstan case was chosen not randomly — you should remember:
 Think carefully. Understand the situation. Do not rush — you must consider many factors.
 
 ---
+
+</details>
+
+<details>
+<summary><strong>The Truth About &quot;Protected&quot; Scammers</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Coffin.webp" alt="Coffin" width="25" height="25" />  The Truth About "Protected" Scammers
 
@@ -324,6 +405,11 @@ Think carefully. Understand the situation. Do not rush — you must consider man
 - But even that cop is dealing with drug cases, not helping cybercriminals
 
 ---
+
+</details>
+
+<details>
+<summary><strong>Scammers vs Real Cybercriminals</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Performing%20Arts.webp" alt="Performing Arts" width="25" height="25" />  Scammers vs Real Cybercriminals
 
@@ -386,6 +472,11 @@ and nothing you do now can change that.**
 
 ---
 
+</details>
+
+<details>
+<summary><strong>Final Words</strong></summary>
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" />  Final Words
 
 So gather evidence. Save everything.
@@ -437,3 +528,11 @@ Many Russian scammers invented a comforting myth: “if you don’t touch the st
 
 
 </div>
+
+</details>
+
+## Project resources
+
+[Dashboard](https://phishdestroy.github.io/DestroyScammers/) · [Source data](data/) · [OSINT scripts](scripts/README.md) · [Security reporting](SECURITY.md) · [MIT license](LICENSE)
+
+**Exposing scammers. Helping victims. One domain at a time.**
