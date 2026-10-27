@@ -1,14 +1,28 @@
+<p align="center"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/readme-polish/hero-mobile-poster.webp" /><source media="(prefers-reduced-motion: reduce)" srcset="assets/readme-polish/hero-poster.webp" /><source media="(max-width: 600px)" srcset="assets/readme-polish/hero-mobile.webp" /><img src="assets/readme-polish/hero.webp" width="100%" alt="DestroyScammers — animated evidence and infrastructure graph" /></picture></p>
+
 # DestroyScammers
 
 **Follow the domains. Connect the infrastructure. Preserve the evidence.**
 
 DestroyScammers is an open-source phishing intelligence dashboard from PhishDestroy. Explore domain records, threat detections, registrar information and infrastructure relationships to support crypto scam research and fraud investigations.
 
-[**Open the dashboard →**](https://phishdestroy.github.io/DestroyScammers/) · [OSINT scripts](scripts/README.md) · [Evidence archive](https://github.com/phishdestroy/ScamIntelLogs)
+<p align="center">
+<a href="https://phishdestroy.github.io/DestroyScammers/"><img src="assets/readme-polish/dashboard.svg" width="248" height="56" alt="OPEN DASHBOARD: Explore the intelligence" /></a>
+<a href="scripts/README.md"><img src="assets/readme-polish/scripts.svg" width="248" height="56" alt="OSINT SCRIPTS: Collection &amp; analysis" /></a>
+<a href="https://github.com/phishdestroy/ScamIntelLogs"><img src="assets/readme-polish/archive.svg" width="248" height="56" alt="EVIDENCE ARCHIVE: Operation records" /></a>
+</p>
+
+<p align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;pause=1000&amp;color=F70003&amp;width=435&amp;lines=Crime+Grows+in+Silence." alt="Crime Grows in Silence." /></p>
 
 <p align="center">
-  <img src="DestroyScammers.webp" alt="DestroyScammers — phishing intelligence and infrastructure research" width="720">
+<a href="https://github.com/phishdestroy/DestroyScammers/stargazers"><img src="https://img.shields.io/github/stars/phishdestroy/DestroyScammers?style=flat-square&amp;label=Stars&amp;color=525d73&amp;labelColor=202832" alt="GitHub stars" /></a>
+<a href="https://github.com/phishdestroy/DestroyScammers/network/members"><img src="https://img.shields.io/github/forks/phishdestroy/DestroyScammers?style=flat-square&amp;label=Forks&amp;color=525d73&amp;labelColor=202832" alt="GitHub forks" /></a>
+<a href="https://github.com/phishdestroy/DestroyScammers/commits/main"><img src="https://img.shields.io/github/last-commit/phishdestroy/DestroyScammers?style=flat-square&amp;label=Updated&amp;color=525d73&amp;labelColor=202832" alt="Last commit" /></a>
 </p>
+
+
+
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
 
 ## Find your starting point
 
@@ -21,6 +35,8 @@ DestroyScammers is an open-source phishing intelligence dashboard from PhishDest
 
 Use the dashboard's search field to begin with a domain. The displayed totals reflect the dataset currently loaded in your browser.
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 ## Investigation workflow
 
 1. **Start with an indicator.** Record the reported domain, URL or transaction reference and when it was observed.
@@ -31,7 +47,7 @@ Use the dashboard's search field to begin with a domain. The displayed totals re
 For chat exports, panel artifacts and operation-specific evidence, use [ScamIntelLogs](https://github.com/phishdestroy/ScamIntelLogs). For a domain blocklist, use [destroylist](https://github.com/phishdestroy/destroylist).
 
 <details>
-<summary><strong>Run the dashboard locally</strong></summary>
+<summary><img src="assets/readme-polish/section-01.svg" width="26" height="24" alt="" />&nbsp; <strong>Run the dashboard locally</strong></summary>
 
 The dashboard is a static site. A local HTTP server is needed to load its JSON data.
 
@@ -47,6 +63,8 @@ For separate collection utilities, see the [OSINT scripts guide](scripts/README.
 
 </details>
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 ## Case studies and research notes
 
 Explore case accounts, investigation tools and guidance on preserving evidence and reporting fraud. Expand a section to read more.
@@ -54,7 +72,7 @@ Explore case accounts, investigation tools and guidance on preserving evidence a
 > **Scammers aren’t hackers — and this dashboard proves it.**
 
 <details>
-<summary><strong>Important Notice</strong></summary>
+<summary><img src="assets/readme-polish/section-02.svg" width="26" height="24" alt="" />&nbsp; <strong>Important Notice</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Card%20Index%20Dividers.webp" alt="Card Index Dividers" width="25" height="25" />  Important Notice
 
@@ -71,11 +89,13 @@ My relationship with these users is at the level where I warned them about the p
 </details>
 
 <details>
-<summary><strong>The Reality About Scammers</strong></summary>
+<summary><img src="assets/readme-polish/section-03.svg" width="26" height="24" alt="" />&nbsp; <strong>The Reality About Scammers</strong></summary>
 
 ## 🎯 The Reality About Scammers
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70003&width=435&lines=Crime+Grows+in+Silence.)](https://git.io/typing-svg)
+<p align="center">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;pause=1000&amp;color=F70003&amp;width=435&amp;lines=Crime+Grows+in+Silence." alt="Typing SVG" /></a>
+</p>
 
 Well, let's talk about scammers and phishers. Sounds unpleasant, right?
 
@@ -102,8 +122,10 @@ It just so happened that I witnessed several cases — an airdrop drainer operat
 
 </details>
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 <details>
-<summary><strong>Who Are These Scammers?</strong></summary>
+<summary><img src="assets/readme-polish/section-04.svg" width="26" height="24" alt="" />&nbsp; <strong>Who Are These Scammers?</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Mouse%20Face.webp" alt="Mouse Face" width="25" height="25" />  Who Are These Scammers?
 
@@ -120,7 +142,7 @@ It's important to gather evidence and identify your scammer. Once you have that,
 </details>
 
 <details>
-<summary><strong>Real Cases I Witnessed</strong></summary>
+<summary><img src="assets/readme-polish/section-05.svg" width="26" height="24" alt="" />&nbsp; <strong>Real Cases I Witnessed</strong></summary>
 
 ## 📋 Real Cases I Witnessed
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70003&width=435&lines=Don%E2%80%99t+play+hero+%E2%80%94+report+it+properly.)](https://git.io/typing-svg)
@@ -208,7 +230,7 @@ And the only real path to that is proper reporting, real evidence, and refusing 
 </details>
 
 <details>
-<summary><strong>Message to Everyone</strong></summary>
+<summary><img src="assets/readme-polish/section-06.svg" width="26" height="24" alt="" />&nbsp; <strong>Message to Everyone</strong></summary>
 
 ## 💬 Message to Everyone
 
@@ -229,8 +251,10 @@ Your own environment is often the first place where your identity surfaces.
 
 </details>
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 <details>
-<summary><strong>The Moral of This Story</strong></summary>
+<summary><img src="assets/readme-polish/section-07.svg" width="26" height="24" alt="" />&nbsp; <strong>The Moral of This Story</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Newspaper.webp" alt="Newspaper" width="25" height="25" />  The Moral of This Story
 
@@ -267,7 +291,7 @@ Your own environment is often the first place where your identity surfaces.
 </details>
 
 <details>
-<summary><strong>Tools Used</strong></summary>
+<summary><img src="assets/readme-polish/section-08.svg" width="26" height="24" alt="" />&nbsp; <strong>Tools Used</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Microscope.webp" alt="Microscope" width="25" height="25" />  Tools Used
 
@@ -316,7 +340,7 @@ In other words:
 </details>
 
 <details>
-<summary><strong>Roadmap</strong></summary>
+<summary><img src="assets/readme-polish/section-09.svg" width="26" height="24" alt="" />&nbsp; <strong>Roadmap</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/New%20Button.webp" alt="New Button" width="25" height="25" />  Roadmap
 
@@ -336,8 +360,10 @@ I also want to make a tool (it already exists privately) for collecting evidence
 
 </details>
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 <details>
-<summary><strong>Message for Victims</strong></summary>
+<summary><img src="assets/readme-polish/section-10.svg" width="26" height="24" alt="" />&nbsp; <strong>Message for Victims</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/SOS%20Button.png" alt="SOS Button" width="25" height="25" />  Message for Victims
 
@@ -372,7 +398,7 @@ I also want to make a tool (it already exists privately) for collecting evidence
 </details>
 
 <details>
-<summary><strong>Choosing Legal Representation</strong></summary>
+<summary><img src="assets/readme-polish/section-11.svg" width="26" height="24" alt="" />&nbsp; <strong>Choosing Legal Representation</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Balance%20Scale.png" alt="Balance Scale" width="25" height="25" />  Choosing Legal Representation
 
@@ -389,7 +415,7 @@ Think carefully. Understand the situation. Do not rush — you must consider man
 </details>
 
 <details>
-<summary><strong>The Truth About &quot;Protected&quot; Scammers</strong></summary>
+<summary><img src="assets/readme-polish/section-12.svg" width="26" height="24" alt="" />&nbsp; <strong>The Truth About &quot;Protected&quot; Scammers</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Coffin.webp" alt="Coffin" width="25" height="25" />  The Truth About "Protected" Scammers
 
@@ -408,8 +434,10 @@ Think carefully. Understand the situation. Do not rush — you must consider man
 
 </details>
 
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
+
 <details>
-<summary><strong>Scammers vs Real Cybercriminals</strong></summary>
+<summary><img src="assets/readme-polish/section-13.svg" width="26" height="24" alt="" />&nbsp; <strong>Scammers vs Real Cybercriminals</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Performing%20Arts.webp" alt="Performing Arts" width="25" height="25" />  Scammers vs Real Cybercriminals
 
@@ -475,7 +503,7 @@ and nothing you do now can change that.**
 </details>
 
 <details>
-<summary><strong>Final Words</strong></summary>
+<summary><img src="assets/readme-polish/section-14.svg" width="26" height="24" alt="" />&nbsp; <strong>Final Words</strong></summary>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" />  Final Words
 
@@ -519,8 +547,10 @@ Many Russian scammers invented a comforting myth: “if you don’t touch the st
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Printer.webp" alt="Printer" width="25" height="25" />  Links
 
-[![GitHub](https://img.shields.io/badge/GitHub-DestroyScammers-181717?style=for-the-badge&logo=github)](https://github.com/phishdestroy/DestroyScammers)
-[![Dataset](https://img.shields.io/badge/Dataset-DestroyList-FF6B6B?style=for-the-badge&logo=databricks)](https://github.com/phishdestroy/destroylist)
+<p align="center">
+<a href="https://github.com/phishdestroy/DestroyScammers"><img src="https://img.shields.io/badge/GitHub-DestroyScammers-181717?style=for-the-badge&amp;logo=github" alt="GitHub" /></a>
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/Dataset-DestroyList-FF6B6B?style=for-the-badge&amp;logo=databricks" alt="Dataset" /></a>
+</p>
 
 ---
 
@@ -530,6 +560,8 @@ Many Russian scammers invented a comforting myth: “if you don’t touch the st
 </div>
 
 </details>
+
+<p align="center"><img src="assets/readme-polish/divider.svg" width="100%" alt="" /></p>
 
 ## Project resources
 
