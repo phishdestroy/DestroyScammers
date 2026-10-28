@@ -80,9 +80,9 @@ This dashboard — no, it's not a leak, no, these are not "random people."
 
 These are my correspondents — it is important for you to understand that legally these people are not strangers to me, and each of the threats received an email from me at least once in the last few months with a request to stop their activity.
 
-**Therefore, GDPR or anything similar does not apply here — thank you.**
+**Prior correspondence documents notice; it does not by itself make the GDPR inapplicable.** The evidence and the basis for publishing it are separate questions.
 
-My relationship with these users is at the level where I warned them about the public publication of their actions, and no claims will be considered by me.
+I warned these users that their documented actions would be published. Factual errors and privacy concerns can be reported through [our correction and security process](SECURITY.md).
 
 ---
 
